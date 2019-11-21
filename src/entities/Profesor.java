@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Profesor implements Serializable {
 
+    private static final long SerialVersionUID = 3L;
+
     // Declaraciones
     private int id;
     private String nombre;

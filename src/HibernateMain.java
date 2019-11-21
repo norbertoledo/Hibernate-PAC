@@ -41,7 +41,6 @@ public class HibernateMain {
 
         // Ficheros
         filePath = "files/";
-        fileExt = ".txt";
 
         // Configuracion de Conexion y transaccion
         cfg = new Configuration().configure();
@@ -145,12 +144,31 @@ public class HibernateMain {
     }
 
     // Escribir ficheros - Recibe el objeto a imprimir y el nombre del fichero
-    private static <T> void writeFile( T obj, String fileName ) throws IOException {
-        File file = new File( filePath, fileName.concat(fileExt) );
-        FileWriter writer = new FileWriter( file );
-        writer.write( obj.toString() );
-        writer.flush();
-        writer.close();
+    private static <T> void writeFile( T obj, String fileName ) {
+        File fichero = new File( filePath, fileName );
+        try{
+            FileOutputStream file = new FileOutputStream( fichero, false);
+            ObjectOutputStream object = new ObjectOutputStream(file);
+            object.writeObject(obj);
+        }catch (IOException e){
+            System.out.println("No se ha podido escribir el fichero");
+        }
+        readFile(obj, fileName);
+    }
+
+    // Leer ficheros recien escritos - Recibe el objeto a imprimir y el nombre del fichero
+    private static <T> void readFile( T obj, String fileName){
+        File fichero = new File(filePath+fileName);
+        try{
+            FileInputStream fileIn = new FileInputStream(fichero);
+            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+            T o = (T) objectIn.readObject();
+            objectIn.close();
+            System.out.println(o.toString());
+        }catch(IOException | ClassNotFoundException e){
+            e.printStackTrace();
+            System.out.println("No se ha podido leer el fichero");
+        }
     }
     
 }

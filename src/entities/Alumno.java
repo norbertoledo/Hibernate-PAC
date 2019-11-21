@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Alumno implements Serializable {
 
+    private static final long SerialVersionUID = 1L;
+
     // Declaraciones
     private int id;
     private String nombre;

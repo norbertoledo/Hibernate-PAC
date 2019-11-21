@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Modulo implements Serializable {
 
+    private static final long SerialVersionUID = 2L;
+
     // Declaraciones
     private int id;
     private String nombre;

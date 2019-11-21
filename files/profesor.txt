@@ -1,4 +1,0 @@
-PROFESOR
-id: 1
-Nombre: Alvaro
-Sexo: M

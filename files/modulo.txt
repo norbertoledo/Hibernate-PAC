@@ -1,4 +1,0 @@
-MODULO
-id: 1
-Nombre: Acceso Datos
-Código: M06
