@@ -37,10 +37,9 @@ public class Modulo implements Serializable {
 
     @Override
     public String toString() {
-        return "Modulo{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", codigo='" + codigo + '\'' +
-                '}';
+        return "MODULO\n" +
+                "id: " + id + '\n' +
+                "Nombre: " + nombre + '\n' +
+                "Código: " + codigo;
     }
 }

@@ -3,7 +3,9 @@
         "-//Hibernate/HibernateConfigurationDTD//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
+
     <session-factory>
+
         <property name="hbm2ddl.auto">create</property>
         <property name="entities.dialect">org.entities.dialect.MySQL5Dialect</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
@@ -12,10 +14,10 @@
         <property name="connection.password">familia</property>
         <property name="hibernate.show_sql">true</property>
 
-
         <mapping resource="mappings/alumno.hbm.xml"/>
         <mapping resource="mappings/profesor.hbm.xml"/>
         <mapping resource="mappings/modulo.hbm.xml"/>
 
     </session-factory>
+
 </hibernate-configuration>

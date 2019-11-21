@@ -1,5 +1,6 @@
-package entities;
-
+import entities.Alumno;
+import entities.Modulo;
+import entities.Profesor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -39,7 +40,7 @@ public class HibernateMain {
         // Inicializacion
 
         // Ficheros
-        filePath = "src/files/";
+        filePath = "files/";
         fileExt = ".txt";
 
         // Configuracion de Conexion y transaccion

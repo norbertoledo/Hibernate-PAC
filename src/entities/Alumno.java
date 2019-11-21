@@ -66,13 +66,18 @@ public class Alumno implements Serializable {
 
     @Override
     public String toString() {
-        return "Alumno{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", edad=" + edad +
-                ", sexo='" + sexo + '\'' +
-                ", modulos=" + modulos +
-                '}';
+        String modulosItems = "";
+        for (int i = 0; i< modulos.size(); i++) {
+            modulosItems += "\n- Nombre: "+modulos.get(i).getNombre()+" / "+
+            "Código: "+modulos.get(i).getCodigo()+" / "+
+            "id: "+modulos.get(i).getId();
+        }
+        return "ALUMNO\n" +
+                "id: " + id + "\n" +
+                "Nombre: " + nombre + '\n' +
+                "Nacionalidad: " + nacionalidad + '\n' +
+                "Edad: " + edad + '\n' +
+                "Sexo: " + sexo + '\n' +
+                "Módulos: " + modulosItems;
     }
 }
